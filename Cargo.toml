@@ -1,5 +1,5 @@
 [package]
-name = "stock_trading_cli"
+name = "stock_trading_tui"
 version = "0.1.0"
 edition = "2024"
 
