@@ -11,6 +11,7 @@ fi
 
 echo "Installing Python dependencies..."
 pip3 install torch numpy
+pip3 install yfinance
 
 echo "Building Rust project..."
 cargo build --release
