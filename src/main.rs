@@ -7,7 +7,7 @@ use std::time::Duration;
 use csv::ReaderBuilder;
 use tui::{
     backend::CrosstermBackend,
-    layout::{Constraint, Direction, Layout, Rect},
+    layout::{Constraint, Direction, Layout},
     style::{Color},
     widgets::{Block, Borders, Paragraph, Row, Table},
     Terminal,
@@ -84,7 +84,7 @@ fn get_stock_info(file_path: &str, ticker: &str) -> Option<StockInfo> {
     let mut close_prices = Vec::new();
     for result in rdr.records() {
         if let Ok(record) = result {
-            if let Some(close_str) = record.get(4) {
+            if let Some(close_str) = record.get(1) {
                 if let Ok(close) = close_str.parse::<f64>() {
                     close_prices.push(close);
                 }
